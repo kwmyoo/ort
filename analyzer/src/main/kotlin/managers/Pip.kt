@@ -120,7 +120,7 @@ class Pip(
                     workingDir = workingDir,
                     definitionFile = definitionFile,
                     pythonVersion = pythonVersionOption.replace(".", ""),
-                    operatingSystem = operatingSystemOption
+                    operatingSystem = if (operatingSystemOption == "mac") "macos" else operatingSystemOption
                 )
             } finally {
                 workingDir.resolve(".cache").safeDeleteRecursively(force = true)
